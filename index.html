@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Comment Section">
+    <meta property="og:description"
+        content="Interactive comment section created with HTML, CSS, and JavaScript. By Eyu Gen.">
+    <meta property="og:image" content="images/thumbnail.jpg">
+    <meta property="og:url" content="https://eyu-gen.github.io/Interactive-Comment-Section">
+    <meta property="og:author" content="Eyu Gen">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Interactive Comment Section">
+    <meta property="og:locale" content="en_US">
+    <link rel="canonical" href="https://eyu-gen.github.io/Interactive-Comment-Section">
+    <title>Comment Section</title>
+    <link rel="icon" type="image/jpg" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="imageSection center modeIcon" id="darkModeIcon">
+            <img src="Images/dark-mode-icon.png" alt="">
+        </div>
+    </header>
+
+    <main class="center">
+        <div class="container" id="post">
+            <div class="author">
+                <div class="imageSection center" id="authorImage">
+                    <img src="Images/1.jpg" alt="" id="author">
+                </div>
+                <div class="authorDetailsContainer">
+                    <p class="authorDetail" id="authorName">Yugin Paudel</p>
+                    <p class="authorDetail subText" id="postTime">10h ago</p>
+                </div>
+            </div>
+            <div class="postContent" id="postContent">
+                <p class="postText">Rate my Interactive Comment Section project created by using HTML, CSS and JavaScript. And also feel free to give feedbacks to improve this project. <span class="highlight">#selfproject #javascript</span></p>
+            </div>
+            <div class="engagementContainer center">
+                <p class="subText"><span id="likeCounter">9</span> Likes</p>
+                <p class="subText"><span>2</span> Comments</p>
+            </div>
+            <hr>
+            <div class="clickContainer center">
+                <div class="imageSection center clickIcon" id="likeIcon">
+                    <img src="Images/like-unclicked.png" alt="" class="iconImage"> <span>Like</span>
+                </div>
+                <div class="imageSection center clickIcon" id="commentIcon">
+                    <img src="Images/comment-icon.png" alt="" class="iconImage"> <span>Comment</span>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
