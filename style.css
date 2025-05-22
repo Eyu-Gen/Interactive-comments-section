@@ -60,37 +60,34 @@ header{
 }
 
 main{
+    flex-direction: column;
+
+    #authorImage{
+        border-radius: 50%;
+        width: 5%;
+        height: 5%;
+        object-fit: contain;
+        margin-right: 10px;
+    }
+
+    .subText{
+            font-size: 0.8rem;
+            color: var(--lightColor);
+        }
 
     .container{
         width: 50%;
         background-color: var(--defaultColor);
         padding: 30px;
         border-radius: 5px;
-        /* border: 1px solid blue; */
-        margin: 0px 50px 0px 50px;
-
-        .subText{
-            font-size: 0.8rem;
-            color: var(--lightColor);
-        }
+        margin: 0px 50px 0px 50px;     
 
         .author{
-            /* border: 1px solid green; */
             height: 100%;
             display: flex;
             align-items: center;
-
-            #authorImage{
-                /* border: 1px solid red; */
-                border-radius: 50%;
-                width: 5%;
-                height: 5%;
-                object-fit: contain;
-                margin-right: 10px;
-            }
-
+           
             .authorDetailsContainer{
-                /* border: 1px solid blue; */
                 #authorName{
                     font-size: 1.1rem;
                     font-weight: 500;
@@ -111,7 +108,7 @@ main{
 
         .clickContainer{
             justify-content: space-around;
-            margin-top: 20px;
+            margin: 10px 0px 10px 0px;
             width: 100%;
             
             .clickIcon{
@@ -122,6 +119,54 @@ main{
 
             .iconImage{
                 width: 20%;
+            }
+        }
+    }
+
+    .commentContainer{
+        border: 1px solid red;
+        width: 50%;
+        height: 20vh;
+        justify-content: start;
+
+        .subcontainer{
+            height: 100%;
+            aspect-ratio: 1;
+            align-items: baseline;
+            justify-content: end;
+            border: 1px solid red;
+        }
+
+        .commentImageSection{
+            width: 20%;
+            aspect-ratio: 1;
+
+            #comment1Image{
+                border-radius: 100%;
+                width: 100%;
+                aspect-ratio: 1;
+                overflow: hidden;
+                object-fit: cover;
+            }
+        }
+
+        .commentSection{
+            width: 50%;
+            margin-left: 20px;
+
+            .commentAuthor{
+                border: 1px solid red;
+                justify-content: start;
+                gap: 10px;
+
+                #comment1Author{
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                }
+            }
+
+            .commentContent{
+
             }
         }
     }
