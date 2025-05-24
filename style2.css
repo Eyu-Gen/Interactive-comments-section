@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --hightlightedColor: rgb(80, 55, 241);
+    --lightColor: rgb(109, 109, 109);
+    --darkColor: rgb(9, 9, 9);
+    --veryLighrColor: rgba(201, 201, 201, 0.17);
+    --defaultColor: white;
+    --fontFamily: Kanit;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageSection {
+    overflow: hidden;
+    
+    img {
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+.highlight{
+    color: var(--hightlightedColor);
+}
+
+hr{
+    opacity: 30%;
+}
+
+body{
+    font-family: var(--fontFamily);
+    background-color: var(--veryLighrColor);
+    color: var(--darkColor);
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 10vh;
+
+    .modeIcon{
+        width: 5%;
+        height: 100%;
+        aspect-ratio: 1;
+        padding: 20px;
+        margin-right: 20px;
+    }
+}
+
+main{
+    flex-direction: column;
+    background-color: var(--defaultColor);
+    width: 50%;
+    margin: 0 auto;
+
+    #authorImage{
+        border-radius: 50%;
+        width: 5%;
+        height: 5%;
+        object-fit: contain;
+        margin-right: 10px;
+    }
+    
+    .subText{
+            font-size: 0.8rem;
+            color: var(--lightColor);
+        }
+
+        .postContainer{
+        width: 100%;
+        padding: 30px;
+        border-radius: 5px;
+        margin: 0px 50px 0px 50px;     
+
+        .author{
+            height: 100%;
+            display: flex;
+            align-items: center;
+           
+            .authorDetailsContainer{
+                #authorName{
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .postContent{
+            margin: 20px 0px 20px 0px;
+            line-height: 1.5rem;
+            color: var(--darkColor);
+        }
+        
+        .engagementContainer{
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .clickContainer{
+            justify-content: space-around;
+            margin: 10px 0px 10px 0px;
+            width: 100%;
+            
+            .clickIcon{
+                cursor: pointer;
+                gap: 10px;
+                width: 20%;
+            }
+
+            .iconImage{
+                width: 20%;
+            }
+        }
+    }
+
+    .commentContainer{
+        width: 100%;
+        /* height: 20vh; */
+        justify-content: start;
+        background-color: var(--defaultColor);
+        padding: 0px 30px 30px 30px;
+
+        .commentAuthor{
+            justify-content: start;
+
+            #commentAuthorName{
+                margin-right: 10px;
+            }
+        }
+
+        #commentContent{
+            margin-top: 10px;
+        }
+    }
+}

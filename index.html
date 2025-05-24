@@ -24,32 +24,30 @@
     <script src="app.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="imageSection center modeIcon" id="darkModeIcon">
-            <img src="Images/dark-mode-icon.png" alt="">
-        </div>
-    </header>
+    <main>
+        <div class="container" id="postContainer">
+            <div class="subContainer center" id="postAuthorContainer">
+                <div class="imageSection center" id="postAuthorImageContainer">
+                    <img src="Images/3.jpg" alt="" id="postAuthorImage">
+                </div>
 
-    <main class="center">
-        <div class="container" id="post">
-            <div class="author">
-                <div class="imageSection center" id="authorImage">
-                    <img src="Images/3.jpg" alt="" id="author">
-                </div>
-                <div class="authorDetailsContainer">
-                    <p class="authorDetail" id="authorName">Yugin Paudel</p>
-                    <p class="authorDetail subText" id="postTime">10h ago</p>
+                <div class="authorDetailContainer">
+                    <p class="authorName">Yugin Paudel</p>
+                    <p class="subText">10h ago</p>
                 </div>
             </div>
-            <div class="postContent" id="postContent">
-                <p class="postText">Rate my Interactive Comment Section project made using HTML, CSS, and JavaScript. Feel free to give feedback to help me improve it! <span class="highlight">#selfproject #javascript</span></p>
+
+            <div class="subContainer" id="postContent">
+                Rate my Interactive Comment Section project made using HTML, CSS, and JavaScript. Feel free to give feedback to help me improve it! <span class="highlight">#selfproject #javascript</span>
             </div>
-            <div class="engagementContainer center">
+
+            <div class="subContainer center" id="engagementContainer">
                 <p class="subText"><span id="likeCounter">9</span> Likes</p>
-                <p class="subText"><span>2</span> Comments</p>
+                <p class="subText"><span>3</span> Comments</p>
             </div>
             <hr>
-            <div class="clickContainer center">
+
+            <div class="subcontainer center" id="likeCommentContainer">
                 <div class="imageSection center clickIcon" id="likeIcon">
                     <img src="Images/like-unclicked.png" alt="" class="iconImage"> <span>Like</span>
                 </div>
@@ -58,26 +56,13 @@
                 </div>
             </div>
             <hr>
+
+            <p class="plainText">All Comments</p>
         </div>
 
-        <div class="commentContainer center">
-            <!-- /*ERROR: Image size is not correct*/ -->
-            <div class="subcontainer center"> 
-                <div class="imageSection commentImageSection center">
-                <img src="Images/1.jpg" alt="" id="comment1Image">
-            </div>
-            </div>
-            <div class="commentSection">
-                <div class="commentAuthor center">
-                    <p class="authorDetail" id="comment1Author">Eyu Gen</p>
-                    <p class="authorDetail subText" id="comment1Time">10h ago</p>
-                </div>
-                <div class="commentContent">
-                    <p class="postText" id="comment1Text">Impressive job! You've implemented all the key features like edit, delete, and reply — that's not easy to pull off. Maybe consider adding local storage or backend support next to make it fully functional. Keep building!</p>
-                </div>
-            </div>
+        <div class="container" id="firstComment">
+            
         </div>
     </main>
-
 </body>
 </html>
