@@ -8,14 +8,14 @@
     --hightlightedColor: rgb(80, 55, 241);
     --lightColor: rgb(109, 109, 109);
     --darkColor: rgb(9, 9, 9);
-    --veryLighrColor: rgba(201, 201, 201, 0.17);
+    --veryLightColor: rgba(201, 201, 201, 0.17);
     --defaultColor: white;
     --fontFamily: Kanit;
 }
 
 body{
     font-family: var(--fontFamily);
-    background-color: var(--veryLighrColor);
+    background-color: var(--veryLightColor);
 }
 
 .center {
@@ -45,10 +45,22 @@ main{
     align-items: end;
 }
 
+.disableContainer{
+        display: none;
+        transition: all 0.2s ease-in-out;
+    }
+
+.enableContainer{
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease-in-out;
+}
+
 .container{
     width: 100%;
     padding: 20px;
-
+    padding-bottom: 0;
+    
     .subContainer{
         margin-bottom: 10px;
     }
@@ -66,6 +78,7 @@ main{
 
     .highlight{
         color: var(--hightlightedColor);
+        font-weight: 500;
     }
 
     hr{
@@ -73,15 +86,38 @@ main{
     }
 
     .plainText{
-        margin: 20px 0px;
+        margin: 20px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        justify-content: end;
+
+        &:hover{
+            color: var(--hightlightedColor);
+        }
+    }
+
+    .interactContainer{
+        width: 50%;
+        padding: 10px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover{
+            background-color: var(--veryLightColor);
+            cursor: pointer;
+        }
     }
 }
 
-#postAuthorContainer{
+#commentContainerWrapper{
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+
+.authorContainer{
     width: 40%;
     justify-content: start;
     
-    #postAuthorImageContainer{
+    .authorImageContainer{
         width: 20%;
         aspect-ratio: 1;
         border-radius: 100%;
@@ -89,27 +125,104 @@ main{
     }
 }
 
-#postContent{
+.content{
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
 
-#engagementContainer{
+.engagementContainer{
     justify-content: space-between;
-    margin: 10px 0px;
 }
 
 #likeCommentContainer{
     justify-content: space-around;
-    margin: 10px;
+}
+
+.clickIcon{
+    width: 30%;
+    justify-content: start;
     
-    .clickIcon{
-        width: 15%;
-        justify-content: start;
+    .iconImage{
+        width: 20%;
+        margin-right: 10px;
+    }
+}
+
+.commentContainer{
+    width: 95%;
+    border: 2px solid var(--veryLightColor);
+    margin-bottom: 10px;
+}
+
+.commentAuthorContainer{
+    width: 40%;
+
+    .commentAuthorImageContainer{
+        margin-right: 10px;
+    }
+    
+    .commentAuthorDetailContainer{
         
-        .iconImage{
-            width: 20%;
+        .commentAuthorName{
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0px;
             margin-right: 10px;
+        }
+    }
+
+}
+
+.replyContainer{
+    width: 100%;
+    margin-left: 20px;
+    padding: 10px;
+    border-left: 2px solid var(--veryLightColor);
+}
+
+@media(max-width: 1025px) and (min-width: 550px) {
+    main {
+        width: 80%;
+    }
+}
+
+@media (max-width: 550px){
+    main{
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .container{
+        .content,
+        .plainText,
+        .engagementContainer{
+            font-size: 1rem;
+        }
+    }
+
+    .authorContainer{
+        width: 100%;
+
+        .authorName{
+            font-size: 1.2rem;
+        }
+    }
+
+    .interactContainer{
+        width: 50%;
+        padding: 0;
+        
+        .clickIcon{
+            width: 60%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .iconName{
+                display: none;
+            }
         }
     }
 }

@@ -25,9 +25,12 @@
 </head>
 <body>
     <main>
+        <!-- Post container -->
         <div class="container" id="postContainer">
-            <div class="subContainer center" id="postAuthorContainer">
-                <div class="imageSection center" id="postAuthorImageContainer">
+
+            <!-- Post Author Details -->
+            <div class="subContainer center authorContainer" id="postAuthorContainer">
+                <div class="imageSection center authorImageContainer" id="postAuthorImageContainer">
                     <img src="Images/3.jpg" alt="" id="postAuthorImage">
                 </div>
 
@@ -37,32 +40,142 @@
                 </div>
             </div>
 
-            <div class="subContainer" id="postContent">
+            <!-- Post Content -->
+            <div class="subContainer content" id="postContent">
                 Rate my Interactive Comment Section project made using HTML, CSS, and JavaScript. Feel free to give feedback to help me improve it! <span class="highlight">#selfproject #javascript</span>
             </div>
 
-            <div class="subContainer center" id="engagementContainer">
+            <!-- Post Engagement -->
+            <div class="subContainer center engagementContainer" id="postEngagementContainer">
                 <p class="subText"><span id="likeCounter">9</span> Likes</p>
                 <p class="subText"><span>3</span> Comments</p>
             </div>
             <hr>
 
-            <div class="subcontainer center" id="likeCommentContainer">
-                <div class="imageSection center clickIcon" id="likeIcon">
-                    <img src="Images/like-unclicked.png" alt="" class="iconImage"> <span>Like</span>
+            <!-- Interactive section -->
+            <div class="subContainer center" id="likeCommentContainer">
+                <div class="interactContainer center">
+                    <div class="imageSection center clickIcon" id="likeIcon">
+                        <img src="Images/like-unclicked.png" alt="" class="iconImage"> <span class="iconName">Like</span>
+                    </div>
                 </div>
-                <div class="imageSection center clickIcon" id="commentIcon">
-                    <img src="Images/comment-icon.png" alt="" class="iconImage"> <span>Comment</span>
+                <div class="interactContainer center">
+                    <div class="imageSection center clickIcon" id="commentIcon">
+                        <img src="Images/comment-icon.png" alt="" class="iconImage"> <span class="iconName">Comment</span>
+                    </div>
                 </div>
             </div>
             <hr>
 
-            <p class="plainText">All Comments</p>
+            <p class="plainText center">All Comments</p>
         </div>
-
-        <div class="container" id="firstComment">
-            
-        </div>
+        
+        <!-- Comments Container -->
+         <div class="container disableContainer" id="commentContainerWrapper">
+             <!-- Static first Comment -->
+             <div class="container commentContainer" id="Comment1Container">
+                 <!-- Comment Author Details -->
+                 <div class="subContainer center commentAuthorContainer authorContainer" id="comment1AuthorContainer">
+                     <div class="imageSection center authorImageContainer commentAuthorImageContainer" id="comment1AuthorImageContainer">
+                         <img src="Images/2.jpg" alt="" class="commentAuthorImage">
+                     </div>
+     
+                     <div class="authorDetailContainer commentAuthorDetailContainer">
+                         <p class="authorName commentAuthorName">Eyu Gen</p>
+                         <p class="subText">1h ago</p>
+                     </div>
+                 </div>
+     
+                 <!-- Comment Content -->
+                 <div class="subContainer commentContent" id="comment1Content">
+                     <span class="highlight">Yugin Paudel</span> Impressive job! You've implemented all the key features like edit, delete, and reply — that's not easy to pull off. Maybe consider adding local storage or backend support next to make it fully functional. Keep building!
+                 </div>
+                 <hr>
+     
+                 <!-- Comment Engagement and Inverative Section-->
+                 <div class="subContainer center engagementContainer commentEngagementContainer" id="comment1EngagementContainer">
+                     <div class="interactContainer center">
+                         <p class="subText replyBtn">Reply</p>
+                     </div>
+                     <div class="interactContainer center">
+                         <p class="subText viewReplyBtn">View Reply</p>
+                     </div>
+                 </div>
+                 
+                 <!-- Replies Container -->
+                      <!-- Reply of First comment -->
+                       <div class="container replyContainer disableContainer" id="reply1Comment1Container">
+                          <!-- Comment Author Details -->
+                          <div class="subContainer center commentAuthorContainer authorContainer" id="reply1Comment1AuthorContainer">
+                              <div class="imageSection center authorImageContainer commentAuthorImageContainer" id="reply1Comment1AuthorImageContainer">
+                                  <img src="Images/3.jpg" alt="" class="commentAuthorImage">
+                              </div>
+              
+                              <div class="authorDetailContainer commentAuthorDetailContainer">
+                                  <p class="authorName commentAuthorName">Yugin Paudel</p>
+                                  <p class="subText">45 min ago</p>
+                              </div>
+                          </div>
+              
+                          <!-- Comment Content -->
+                          <div class="subContainer commentContent" id="reply1Comment1Content">
+                              <span class="highlight">Eyu Gen</span> Thank you for your feedback! I appreciate your suggestions. Local storage or backend support would definitely enhance the functionality of the comment section. I'll consider implementing that in the future.
+                          </div>
+                      </div>
+             </div>
+     
+             <!-- Dynamic Second Comment/Deletable + Editable -->
+             <div class="container commentContainer" id="comment2Container">
+                 <!-- Comment Author Details -->
+                 <div class="subContainer center commentAuthorContainer authorContainer" id="comment2AuthorContainer">
+                     <div class="imageSection center authorImageContainer commentAuthorImageContainer" id="comment2AuthorImageContainer">
+                         <img src="Images/1.png" alt="" class="commentAuthorImage">
+                     </div>
+     
+                     <div class="authorDetailContainer  commentAuthorDetailContainer">
+                         <p class="authorName commentAuthorName">You</p>
+                         <p class="subText">45min ago</p>
+                     </div>
+                 </div>
+     
+                 <!-- Comment Content -->
+                 <div class="subContainer commentContent" id="comment2Content">
+                     <span class="highlight">Yugin Paudel</span> This is a great project! I love how you've implemented the comment section with all the necessary features. The design is clean and user-friendly. Keep up the good work!
+                 </div>
+                 <hr>
+     
+                 <!-- Comment Engagement and Inverative Section-->
+                 <div class="subContainer center engagementContainer commentEngagementContainer" id="comment2EngagementContainer">
+                     <div class="interactContainer center">
+                         <p class="subText replyBtn">Reply</p>
+                     </div>
+                     <div class="interactContainer center">
+                         <p class="subText viewReplyBtn">View Reply</p>
+                     </div>
+                 </div>
+                 
+                 <!-- Replies Container -->
+                      <!-- Reply of First comment -->
+                       <div class="container  replyContainer disableContainer" id="reply1Comment2Container">
+                          <!-- Comment Author Details -->
+                          <div class="subContainer center commentAuthorContainer authorContainer" id="reply1Comment2AuthorContainer">
+                              <div class="imageSection center authorImageContainer commentAuthorImageContainer" id="reply1Comment2AuthorImageContainer">
+                                  <img src="Images/3.jpg" alt="" class="commentAuthorImage">
+                              </div>
+              
+                              <div class="authorDetailContainer commentAuthorDetailContainer">
+                                  <p class="authorName commentAuthorName">Yugin Paudel</p>
+                                  <p class="subText">40min ago</p>
+                              </div>
+                          </div>
+              
+                          <!-- Comment Content -->
+                          <div class="subContainer commentContent" id="reply1Comment2Content">
+                              <span class="highlight">You</span> Thank you for your kind words! I'm glad you like the design and functionality of the comment section. Your feedback means a lot to me. If you have any suggestions for improvement, feel free to share!
+                          </div>
+                      </div>
+             </div>
+         </div>
     </main>
 </body>
 </html>
