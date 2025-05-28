@@ -1,3 +1,15 @@
+// Function for remove and add classList...
+function removeAndAddClass(element, toggleVar) {
+    if(toggleVar==1){
+        element.classList.add("enableContainer");
+        element.classList.remove("disableContainer");
+    } else {
+        element.classList.remove("enableContainer");
+        element.classList.add("disableContainer");
+    }
+}
+
+
 //Like Increment................
 const likeBtn = document.getElementById("likeBTN");
 const likeCounter = document.getElementById("likeCounter");
@@ -10,17 +22,13 @@ likeBtn.addEventListener("click", () => {
     if (isliked) {
         likeCount++;
         likeCounter.innerText = `${likeCount}`;
-        unclickedLikeIcon.classList.add("disableContainer");
-        unclickedLikeIcon.classList.remove("enableContainer");
-        clickedLikeIcon.classList.add("enableContainer");  
-        clickedLikeIcon.classList.remove("disableContainer");
+        removeAndAddClass(unclickedLikeIcon, 0);
+        removeAndAddClass(clickedLikeIcon, 1);
     } else {
         likeCount--;
         likeCounter.innerText = `${likeCount}`;
-        unclickedLikeIcon.classList.remove("disableContainer");
-        unclickedLikeIcon.classList.add("enableContainer");
-        clickedLikeIcon.classList.remove("enableContainer");  
-        clickedLikeIcon.classList.add("disableContainer");
+        removeAndAddClass(unclickedLikeIcon, 1);
+        removeAndAddClass(clickedLikeIcon, 0);
     }
 });
 
@@ -33,12 +41,10 @@ showAllCommentBTN.addEventListener("click", () => {
     const commentSection = document.getElementById("commentContainerWrapper");
 
     if (toogleCommentSection) {
-        commentSection.classList.remove("disableContainer");
-        commentSection.classList.add("enableContainer");
+        removeAndAddClass(commentSection, 1);
         showAllCommentBTN.innerHTML = "Hide Comments";
     } else {
-        commentSection.classList.remove("enableContainer");
-        commentSection.classList.add("disableContainer");
+        removeAndAddClass(commentSection, 0);
         showAllCommentBTN.innerHTML = "All Comments";
     }
 });
@@ -53,13 +59,11 @@ Array.from(replyBtn).forEach((btn) => {
         const replyIndex = Array.from(replyBtn).indexOf(btn);
         isClicked = !isClicked;
         if (isClicked) {
-            replyContainer[replyIndex].classList.remove("disableContainer");
-            replyContainer[replyIndex].classList.add("enableContainer");
+            removeAndAddClass(replyContainer[replyBtn], 1);
             viewReplyTxt[replyIndex].innerHTML = "Hide Reply";
         }
-        else{
-            replyContainer[replyIndex].classList.remove("enableContainer");
-            replyContainer[replyIndex].classList.add("disableContainer");
+        else {
+            removeAndAddClass(replyContainer[replyIndex], 0);
             viewReplyTxt[replyIndex].innerHTML = "View Reply (1)";
         }
     });
@@ -72,19 +76,17 @@ const commentContainer = document.getElementById("comment2Container");
 const deleteConfirmContainer = document.getElementById("deleteConfirmContainer");
 deleteBTN.addEventListener("click", () => {
     Array.from(alertContainerWrapper).forEach((bg) => {
-        bg.classList.add("enableContainer");
-        bg.classList.remove("disableContainer");
+        removeAndAddClass(bg, 1);
     });
-    deleteConfirmContainer.classList.add("enableContainer");
-    deleteConfirmContainer.classList.remove("disableContainer");
+    removeAndAddClass(deleteConfirmContainer, 1);
+    removeAndAddClass(commentTypingContainer, 0);
 });
 
 //Cancel Deletion of reply comment popup while clicking on cancel btn.....
 const cancelDeleteBTN = document.getElementById("cancelDeleteBTN");
 cancelDeleteBTN.addEventListener("click", () => {
     Array.from(alertContainerWrapper).forEach((bg) => {
-        bg.classList.remove("enableContainer");
-        bg.classList.add("disableContainer");
+        removeAndAddClass(bg, 0);
     });
     deleteConfirmContainer.classList.add("disableContainer");
 });
@@ -93,9 +95,100 @@ cancelDeleteBTN.addEventListener("click", () => {
 const deleteComfirmBTN = document.getElementById("deleteComfirmBTN");
 deleteComfirmBTN.addEventListener("click", () => {
     Array.from(alertContainerWrapper).forEach((bg) => {
-        bg.classList.remove("enableContainer");
-        bg.classList.add("disableContainer");
+        removeAndAddClass(bg, 0);
     });
     deleteConfirmContainer.classList.add("disableContainer");
     commentContainer.remove();
+});
+
+//Comment Typing Container hide and show...
+const commentBTN = document.getElementById("commentBTN");
+const commentRemark = document.getElementById("commentRemark");
+commentBTN.addEventListener("click", () => {
+    Array.from(alertContainerWrapper).forEach((bg) => {
+        removeAndAddClass(bg, 1);
+    });
+    removeAndAddClass(deleteConfirmContainer, 0);
+    commentTypingContainer.classList.add("enableContainer");
+    commentRemark.innerText = "Commenting to Yugin Paudel";
+});
+
+//Comment cancel while clicking cancelPost button....
+const cancelPostBTN = document.getElementById("cancelPostBTN");
+const commentTypingContainer = document.getElementById("commentTypingContainer");
+cancelPostBTN.addEventListener("click", () => {
+    Array.from(alertContainerWrapper).forEach((bg) => {
+        removeAndAddClass(bg, 0);
+    });
+    removeAndAddClass(commentTypingContainer, 0);
+});
+
+//Comment Typing container hide and show....
+const commentReplyBtn = document.querySelectorAll(".commentReplyBtn");
+const commentTo = document.querySelectorAll(".commentTo");
+
+Array.from(commentReplyBtn).forEach((replyBtn, index) => {
+    replyBtn.addEventListener("click", () => {
+        Array.from(alertContainerWrapper).forEach((bg) => {
+            removeAndAddClass(bg, 1);
+        });
+        removeAndAddClass(deleteConfirmContainer, 0);
+        commentTypingContainer.classList.add("enableContainer");
+        commentRemark.innerText = `Replying to ${commentTo[index].innerText}`;
+    });
+});
+
+//Comment content lai pakadna...
+const postBTN = document.getElementById("postBTN");
+const newCommentSection = document.getElementById("newCommentSection");
+postBTN.addEventListener("click", () => {
+    const commentTypingContent = (document.getElementById("commentTypingContent")).value;
+    
+    newCommentSection.innerHTML = `
+        <div class="container commentContainer">
+                 <!-- Comment Author Details -->
+                  <div class="header center">
+                      <div class="subContainer center commentAuthorContainer authorContainer">
+                          <div class="imageSection center authorImageContainer commentAuthorImageContainer">
+                              <img src="Images/1.png" alt="" class="commentAuthorImage">
+                          </div>
+          
+                          <div class="authorDetailContainer  commentAuthorDetailContainer">
+                              <p class="authorName commentAuthorName commentTo">You</p>
+                              <p class="subText">Just Now</p>
+                          </div>
+                      </div>
+                      <div class="settingContainer center" id="settingContainer"> <!--ERROR HERE-->
+                        <div class="settingOption center" id="editBTN">
+                            <div class="imageSection center settingIcon">
+                                <img src="Images/icon-edit.svg" alt="" id="editIcon"> 
+                            </div>
+                            <span class="iconName plainText" id="editText">Edit</span>
+                        </div>
+                        <div class="settingOption center" id="deleteBTN">
+                            <div class="imageSection center settingIcon">
+                                <img src="Images/icon-delete.svg" alt="" id="deleteIcon"> 
+                            </div>
+                            <span class="iconName plainText" id="deleteText">Delete</span>
+                        </div>
+                        </div>
+                    </div>
+     
+                 <!-- Comment Content -->
+                 <div class="subContainer commentContent" id="comment2Content">
+                     <span class="highlight">Yugin Paudel</span> ${commentTypingContent}
+                 </div>
+                 <hr>
+     
+                 <!-- Comment Engagement and Inverative Section-->
+                 <div class="subContainer center engagementContainer commentEngagementContainer" id="comment2EngagementContainer">
+                     <div class="interactContainer center commentReplyBtn">
+                         <p class="subText replyBtn">Reply</p>
+                     </div>
+                     <div class="interactContainer center viewReplyBTN">
+                         <p class="subText viewReplyTxt">View Reply (0)</p>
+                     </div>
+                 </div>
+             </div>
+    `;
 });
