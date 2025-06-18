@@ -1,3 +1,18 @@
 {
     "liveServer.settings.port": 5501
 }
+
+// .....Features Required.....
+// -> Comment - Empty No Post - COMPLETED
+// -> Comment - Post - COMPLETED
+// -> Comment - Comment Number Increment - COMPLETED
+// -> New Comment - Edit & Delete - WIP
+// -> Old Comment - Edit
+// -> Reply - Empty No Post 
+// -> Reply - Post
+// -> Reply - Comment Number Increment
+// -> Reply - Edit & Delete
+// -> Final Test
+// -> Improve
+// -> OG Title & Image
+// -> Finish

@@ -50,6 +50,10 @@
                 </div>
             </div>
 
+            <div class="visibilityHidden" id="errorContainer">
+                <p class="error"><b>Please enter a comment before submitting.</b></p>
+            </div>
+
             <textarea id="commentTypingContent"></textarea>
 
             <div class="btnContainer center">
@@ -85,7 +89,7 @@
             <!-- Post Engagement -->
             <div class="subContainer center engagementContainer" id="postEngagementContainer">
                 <p class="subText"><span id="likeCounter">9</span> Likes</p>
-                <p class="subText"><span>4</span> Comments</p>
+                <p class="subText"><span id="commentCounter">4</span> Comments</p>
             </div>
             <hr>
 
@@ -136,7 +140,7 @@
                          <p class="subText replyBtn">Reply</p>
                      </div>
                      <div class="interactContainer center viewReplyBTN">
-                         <p class="subText viewReplyTxt">View Reply (1)</p>
+                         <p class="subText viewReplyTxt">View Reply (<span class="replyCounter">1</span>)</p>
                      </div>
                  </div>
                  
@@ -183,7 +187,7 @@
                             </div>
                             <span class="iconName plainText" id="editText">Edit</span>
                         </div>
-                        <div class="settingOption center" id="deleteBTN">
+                        <div class="settingOption center deleteBTN" id="deleteBTN">
                             <div class="imageSection center settingIcon">
                                 <img src="Images/icon-delete.svg" alt="" id="deleteIcon"> 
                             </div>
@@ -204,7 +208,7 @@
                          <p class="subText replyBtn">Reply</p>
                      </div>
                      <div class="interactContainer center viewReplyBTN">
-                         <p class="subText viewReplyTxt">View Reply (1)</p>
+                         <p class="subText viewReplyTxt">View Reply (<span class="replyCounter">1</span>)</p>
                      </div>
                  </div>
 
